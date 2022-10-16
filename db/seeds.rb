@@ -15,14 +15,19 @@ if Category.all.length == 0
     end
 end
 
+if User.count == 0
+    User.create(username: "ash", name: "Ash", email: "ash@test.com", password: "ketchum", password_confirmation: "ketchum")
+    User.create(username: "brock", name: "Brock", email: "brock@test.com", password: "harrison", password_confirmation: "harrison")
+end
+
 if Prediction.all.length == 0
-    Prediction.create(category_id: 1, description: "If you jump over the drain, you will have more luck")
-    Prediction.create(category_id: 2, description: "Beware of the chicken in the back of the fridge")
-    Prediction.create(category_id: 3, description: "Your long line represents the long life you will have")
-    Prediction.create(category_id: 4, description: "There will be a four day working week")
-    Prediction.create(category_id: 5, description: "There is a heart in your cup, showing a long lasting love")
-    Prediction.create(category_id: 6, description: "This month will be full of passion projects")
-    Prediction.create(category_id: 7, description: "3 asparagus means 3 dogs")
-    Prediction.create(category_id: 8, description: "We were on a break")
+    Prediction.create(user_id: 1, category_id: 1, description: "If you jump over the drain, you will have more luck")
+    Prediction.create(user_id: 1, category_id: 2, description: "Beware of the chicken in the back of the fridge")
+    Prediction.create(user_id: 1, category_id: 3, description: "Your long line represents the long life you will have")
+    Prediction.create(user_id: 1, category_id: 4, description: "There will be a four day working week")
+    Prediction.create(user_id: 2, category_id: 5, description: "There is a heart in your cup, showing a long lasting love")
+    Prediction.create(user_id: 2, category_id: 6, description: "This month will be full of passion projects")
+    Prediction.create(user_id: 2, category_id: 7, description: "3 asparagus means 3 dogs")
+    Prediction.create(user_id: 2, category_id: 8, description: "We were on a break")
 end
 
